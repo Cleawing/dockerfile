@@ -8,8 +8,8 @@ RUN (echo "deb http://http.debian.net/debian/ jessie main contrib non-free" > /e
 
 RUN apt-get -q update && \
     apt-get -yq upgrade  && \
-    apt-get -yq install apt-utils && \
-    apt-get -yq install wget zip unzip nano curl && \
+    apt-get -yq install --no-install-recommends apt-utils && \
+    apt-get -yq install --no-install-recommends wget zip unzip curl && \
     apt-get -yq install --reinstall procps && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
