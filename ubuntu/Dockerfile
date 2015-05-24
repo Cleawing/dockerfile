@@ -6,8 +6,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN export DEBIAN_FRONTEND="noninteractive" && \
-	apt-get -qy update && \
-	apt-get -qy install curl && \
-	apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get -qy update && apt-get -qy upgrade \
+	&&  apt-get -qy install curl wget \
+	&& apt-get clean && rm -rf /var/lib/apt/lists/*
