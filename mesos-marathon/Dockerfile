@@ -19,4 +19,5 @@ WORKDIR /opt/marathon
 
 EXPOSE 8080
 
+CMD ["--help"]
 ENTRYPOINT ["./bin/start"]
