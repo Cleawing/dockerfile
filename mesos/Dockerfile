@@ -7,3 +7,13 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF \
 	&& apt-get -yq update && apt-get -yq install --no-install-recommends mesos=0.22.1-1.0.ubuntu1404 \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
 	&& rm /etc/mesos/zk && rm /etc/mesos-master/quorum
+
+ADD ./run-master.sh /opt/run-master.sh
+RUN chmod 755 /opt/run-master.sh
+
+ADD ./run-slave.sh /opt/run-slave.sh
+RUN chmod 755 /opt/run-slave.sh
+
+VOLUME ["/var/log/mesos", "/var/lib/mesos"]
+	
+EXPOSE 5050

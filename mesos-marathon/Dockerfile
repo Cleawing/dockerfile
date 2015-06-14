@@ -2,7 +2,7 @@ FROM cleawing/zulu-openjdk:8u45
 
 MAINTAINER Cleawing Dockerfile <dockerfile@cleawing.com>
 
-RUN export MARATHON_VERSION="0.8.1" && apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
+RUN export MARATHON_VERSION="0.8.2" && apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
 	DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]') && \
 	CODENAME=$(lsb_release -cs) && \
 	echo "deb http://repos.mesosphere.io/${DISTRO} ${CODENAME} main" | tee /etc/apt/sources.list.d/mesosphere.list && \

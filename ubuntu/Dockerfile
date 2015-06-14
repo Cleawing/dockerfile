@@ -9,5 +9,5 @@ ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qy update && apt-get -qy upgrade \
-	&& apt-get -qy install curl wget attr software-properties-common psmisc \
+	&& apt-get -qy install curl wget attr software-properties-common psmisc dnsutils \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
