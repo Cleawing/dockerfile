@@ -1,0 +1,3 @@
+[submodule "docker-consul"]
+	path = docker-consul
+	url = git@github.com:Cleawing/docker-consul.git
