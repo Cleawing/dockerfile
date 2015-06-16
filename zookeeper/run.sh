@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ZOO_CFG="/opt/zookeeper/conf/zoo.cfg"
-SERVER_IP=$(ip -4 addr show dev ethwe | grep -o 'inet [0-9.]*' | cut -d ' ' -f 2)
+export SERVER_IP=$(ip -4 addr show dev eth0 | grep -o 'inet [0-9.]*' | cut -d ' ' -f 2)
 
 # Output server ID
 echo "server id (myid): ${SERVER_ID}"
