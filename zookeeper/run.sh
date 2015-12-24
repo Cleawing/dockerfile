@@ -1,14 +1,14 @@
 #!/bin/sh
 
 ZOO_CFG="/opt/zookeeper/conf/zoo.cfg"
-export SERVER_IP=$(ip -4 addr show dev eth0 | grep -o 'inet [0-9.]*' | cut -d ' ' -f 2)
+# export SERVER_IP=$(ip -4 addr show dev ethwe | grep -o 'inet [0-9.]*' | cut -d ' ' -f 2)
 
 # Output server ID
 echo "server id (myid): ${SERVER_ID}"
 echo "${SERVER_ID}" > /tmp/zookeeper/myid
 
 # Add additional ZooKeeper servers into the zoo.cfg file
-echo "server.${SERVER_ID}=${SERVER_IP}:2888:3888" >> ${ZOO_CFG}
+# echo "server.${SERVER_ID}=${SERVER_IP}:2888:3888" >> ${ZOO_CFG}
 echo "${ADDITIONAL_ZOOKEEPER_1}" >> ${ZOO_CFG}
 echo "${ADDITIONAL_ZOOKEEPER_2}" >> ${ZOO_CFG}
 echo "${ADDITIONAL_ZOOKEEPER_3}" >> ${ZOO_CFG}
